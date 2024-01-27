@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:responsive_admin_dashboard/model/user_info_model.dart';
 import 'package:responsive_admin_dashboard/utils/app_styles.dart';
 
 class UserInfoListTile extends StatelessWidget {
-  const UserInfoListTile(
-      {super.key,
-      required this.img,
-      required this.title,
-      required this.subtitle});
+  const UserInfoListTile({super.key, required this.userInfoModel});
 
-  final String img, title, subtitle;
+  final UserInfoModel userInfoModel;
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +19,17 @@ class UserInfoListTile extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(right: 10.0),
           child: SvgPicture.asset(
-            img,
+            userInfoModel.img,
             width: 32,
             height: 32,
           ),
         ),
         title: Text(
-          title,
+          userInfoModel.title,
           style: AppStyles.semiBold16,
         ),
         subtitle: Text(
-          subtitle,
+          userInfoModel.subtitle,
           style: AppStyles.regular12,
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widget/all_expenses_widget.dart';
+import 'quick_invoice.dart';
 
 class MobileLayout extends StatelessWidget {
   const MobileLayout({super.key});
@@ -10,8 +11,10 @@ class MobileLayout extends StatelessWidget {
       padding: EdgeInsets.only(top: 40.0),
       child: Column(
         children: [
-          // All Expenses
+          // All Expenses Section
           AllExpenses(),
+          SizedBox(height: 24),
+          QuickInvoice(),
         ],
       ),
     );

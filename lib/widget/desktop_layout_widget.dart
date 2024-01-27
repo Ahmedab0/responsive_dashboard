@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_admin_dashboard/widget/mobile_layout_widget.dart';
+import '../widget/mobile_layout_widget.dart';
 
 import 'custom_drawer.dart';
 
@@ -29,6 +29,7 @@ class DesktopLayout extends StatelessWidget {
           const SizedBox(
             width: 24,
           ),
+          //
           Expanded(
             flex: 4,
             child: Container(

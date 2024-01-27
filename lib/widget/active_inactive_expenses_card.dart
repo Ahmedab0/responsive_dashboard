@@ -33,6 +33,8 @@ class ActiveExpensesCard extends StatelessWidget {
                 ),
                 child: SvgPicture.asset(
                   expensesItemModel.img,
+                  colorFilter:
+                      const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                 ),
               ),
               const Expanded(child: SizedBox()),
@@ -51,7 +53,9 @@ class ActiveExpensesCard extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             DateFormat.yMMM().format(DateTime.now()),
-            style: AppStyles.regular14,
+            style: AppStyles.regular14.copyWith(
+              color: const Color(0xFFFAFAFA),
+            ),
           ),
           const SizedBox(height: 16),
           Text(
@@ -94,6 +98,7 @@ class InActiveExpensesCard extends StatelessWidget {
                 ),
                 child: SvgPicture.asset(
                   expensesItemModel.img,
+                  //colorFilter: const ColorFilter.mode(Color(0xff4EB7F2), BlendMode.srcIn),
                 ),
               ),
               const Expanded(child: SizedBox()),

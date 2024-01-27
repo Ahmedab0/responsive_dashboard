@@ -14,7 +14,7 @@ class ExpensesListView extends StatefulWidget {
 class _ExpensesListViewState extends State<ExpensesListView> {
   int selectedIndex = 0;
 
-  List<ExpensesItemModel> items = const [
+  final List<ExpensesItemModel> items = const [
     ExpensesItemModel(img: Assets.imagesMoneys, title: 'Balance'),
     ExpensesItemModel(img: Assets.imagesIncome, title: 'Income'),
     ExpensesItemModel(img: Assets.imagesExpenses, title: 'Expenses'),

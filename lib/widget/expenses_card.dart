@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_admin_dashboard/widget/active_inactive_expenses_card.dart';
+import '../widget/active_inactive_expenses_card.dart';
 
 import '../model/expenses_item_model.dart';
 
@@ -12,8 +12,18 @@ class ExpensesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return isActive
-        ? ActiveExpensesCard(expensesItemModel: expensesItemModel)
-        : InActiveExpensesCard(expensesItemModel: expensesItemModel);
+    return AnimatedCrossFade(
+      duration: const Duration(milliseconds: 500),
+      //firstCurve: Curves.easeIn,
+      //secondCurve: Curves.easeOut,
+      firstChild: ActiveExpensesCard(expensesItemModel: expensesItemModel),
+      secondChild: InActiveExpensesCard(expensesItemModel: expensesItemModel),
+      crossFadeState:
+          isActive ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+    );
+
+    //isActive
+    // ? ActiveExpensesCard(expensesItemModel: expensesItemModel)
+    // : InActiveExpensesCard(expensesItemModel: expensesItemModel);
   }
 }
