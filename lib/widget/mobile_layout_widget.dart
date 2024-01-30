@@ -9,13 +9,18 @@ class MobileLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.only(top: 40.0),
-      child: Column(
-        children: [
-          // All Expenses Section
-          AllExpenses(),
-          SizedBox(height: 24),
-          QuickInvoice(),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            // All Expenses Section
+            AllExpenses(),
+            SizedBox(height: 24),
+            QuickInvoice(),
+            SizedBox(
+              height: 32,
+            )
+          ],
+        ),
       ),
     );
   }

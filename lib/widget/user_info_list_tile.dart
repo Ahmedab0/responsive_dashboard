@@ -14,23 +14,25 @@ class UserInfoListTile extends StatelessWidget {
       margin: const EdgeInsets.all(0.0),
       elevation: 0,
       color: const Color(0xFFFAFAFA),
-      child: ListTile(
-        contentPadding: const EdgeInsets.all(12.0),
-        leading: Padding(
-          padding: const EdgeInsets.only(right: 10.0),
-          child: SvgPicture.asset(
-            userInfoModel.img,
-            width: 32,
-            height: 32,
+      child: Center(
+        child: ListTile(
+          contentPadding: const EdgeInsets.all(12.0),
+          leading: Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: SvgPicture.asset(
+              userInfoModel.img,
+              width: 32,
+              height: 32,
+            ),
           ),
-        ),
-        title: Text(
-          userInfoModel.title,
-          style: AppStyles.semiBold16,
-        ),
-        subtitle: Text(
-          userInfoModel.subtitle,
-          style: AppStyles.regular12,
+          title: Text(
+            userInfoModel.title,
+            style: AppStyles.semiBold16,
+          ),
+          subtitle: Text(
+            userInfoModel.subtitle,
+            style: AppStyles.regular12,
+          ),
         ),
       ),
     );

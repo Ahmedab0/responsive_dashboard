@@ -8,11 +8,11 @@ class LatestTransactionListView extends StatelessWidget {
 
   static const List<UserInfoModel> usersInfo = [
     UserInfoModel(
-        img: Assets.imagesFrame1,
+        img: Assets.imagesFrame3,
         title: 'Madrani Andi',
         subtitle: 'Madraniadi20@gmail'),
     UserInfoModel(
-        img: Assets.imagesFrame2,
+        img: Assets.imagesFrame1,
         title: 'Josua Nunito',
         subtitle: 'Josh Nunito@gmail.com'),
     UserInfoModel(
@@ -23,11 +23,33 @@ class LatestTransactionListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) =>
-          UserInfoListTile(userInfoModel: usersInfo[index]),
-      itemCount: usersInfo.length,
+    return SizedBox(
+      height: 85,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => IntrinsicWidth(
+            child: Padding(
+          padding: const EdgeInsets.only(right: 20.0),
+          child: UserInfoListTile(userInfoModel: usersInfo[index]),
+        )),
+        itemCount: usersInfo.length,
+      ),
     );
+
+/*
+/// Another Way
+SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+          children: usersInfo
+              .map((e) => IntrinsicWidth(
+                      child: Padding(
+                    padding: const EdgeInsets.only(right: 20.0),
+                    child: UserInfoListTile(userInfoModel: e),
+                  )))
+              .toList()),
+    );
+
+*/
   }
 }
