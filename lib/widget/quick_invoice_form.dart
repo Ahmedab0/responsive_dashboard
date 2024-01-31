@@ -55,7 +55,6 @@ class QuickInvoiceForm extends StatelessWidget {
                     CustomButton(txt: 'Send Money', bgClr: null, txtClr: null)),
           ],
         ),
-        SizedBox(height: 24),
       ],
     );
   }
