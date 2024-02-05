@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_admin_dashboard/widget/custom_background_container.dart';
-import '../widget/my_card.dart';
+import 'all_expenses_widget.dart';
+import 'card_and_transaction_section.dart';
+import 'custom_background_container.dart';
+import 'my_card.dart';
 import '../widget/mobile_layout_widget.dart';
 
 import 'cards_page_views.dart';
 import 'custom_drawer.dart';
+import 'my_card_section.dart';
+import 'quick_invoice.dart';
+import 'side_bar_widget.dart';
 
 class DesktopLayout extends StatelessWidget {
   const DesktopLayout({super.key});
@@ -18,26 +23,49 @@ class DesktopLayout extends StatelessWidget {
         children: [
           // Custom Drawer
           Expanded(
-            flex: 3,
+            //flex: 3,
             child: CustomDrawer(),
           ),
-          SizedBox(
-            width: 32,
-          ),
-          // MobileLayout
+          SizedBox(width: 32),
+
           Expanded(
-            flex: 5,
-            child: MobileLayout(),
+            flex: 3,
+            child: CustomScrollView(
+              slivers: [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Row(
+                    children: [
+                      // MobileLayout
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          children: [
+                            SizedBox(height: 40),
+                            // All Expenses Section
+                            AllExpenses(),
+                            SizedBox(height: 24),
+                            QuickInvoice(),
+                            SizedBox(
+                              height: 32,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 24),
+                      // Side Bar
+                      Expanded(
+                        //flex: 4,
+                        child: SideBar(),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-          SizedBox(
-            width: 24,
-          ),
-          //
-          Expanded(
-            flex: 4,
-            child:
-                CustomBackgroundContainer(padding: 24, child: CardPageView()),
-          ),
+
+          SizedBox(width: 32),
         ],
       ),
     );

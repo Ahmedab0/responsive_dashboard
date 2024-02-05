@@ -6,7 +6,8 @@ import 'package:device_preview/device_preview.dart';
 import 'views/my_home_page.dart';
 
 void main() {
-  runApp(DevicePreview(builder: (context) => const MyApp()));
+  runApp(const MyApp());
+  //runApp(DevicePreview(builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,8 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
+      debugShowCheckedModeBanner: false,
+      //locale: DevicePreview.locale(context),
+      //builder: DevicePreview.appBuilder,
       theme: ThemeData(
         colorScheme: const ColorScheme.light(primary: Colors.blue),
         useMaterial3: true,
