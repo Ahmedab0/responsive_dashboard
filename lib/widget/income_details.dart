@@ -20,11 +20,12 @@ class IncomeDetails extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: AppStyles.regular16,
+        style: AppStyles.regular16(context),
       ),
       trailing: Text(
         amount,
-        style: AppStyles.medium16.copyWith(color: const Color(0xff208CC8)),
+        style: AppStyles.medium16(context)
+            .copyWith(color: const Color(0xff208CC8)),
       ),
     );
   }

@@ -48,19 +48,19 @@ class ActiveExpensesCard extends StatelessWidget {
           const SizedBox(height: 34),
           Text(
             expensesItemModel.title,
-            style: AppStyles.semiBold16.copyWith(color: Colors.white),
+            style: AppStyles.semiBold16(context).copyWith(color: Colors.white),
           ),
           const SizedBox(height: 8),
           Text(
             DateFormat.yMMM().format(DateTime.now()),
-            style: AppStyles.regular14.copyWith(
+            style: AppStyles.regular14(context).copyWith(
               color: const Color(0xFFFAFAFA),
             ),
           ),
           const SizedBox(height: 16),
           Text(
             '\$20.129',
-            style: AppStyles.semiBold24.copyWith(color: Colors.white),
+            style: AppStyles.semiBold24(context).copyWith(color: Colors.white),
           ),
         ],
       ),
@@ -112,17 +112,17 @@ class InActiveExpensesCard extends StatelessWidget {
           const SizedBox(height: 34),
           Text(
             expensesItemModel.title,
-            style: AppStyles.semiBold16,
+            style: AppStyles.semiBold16(context),
           ),
           const SizedBox(height: 8),
           Text(
             DateFormat.yMMM().format(DateTime.now()),
-            style: AppStyles.regular14,
+            style: AppStyles.regular14(context),
           ),
           const SizedBox(height: 16),
-          const Text(
+          Text(
             '\$20.129',
-            style: AppStyles.semiBold24,
+            style: AppStyles.semiBold24(context),
           ),
         ],
       ),

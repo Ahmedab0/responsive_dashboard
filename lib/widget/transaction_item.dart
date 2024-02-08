@@ -17,22 +17,32 @@ class TransactionItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: ListTile(
-        //contentPadding: const EdgeInsets.all(20.0),
-        title: Text(transactionModel.title, style: AppStyles.semiBold16),
-        subtitle: Text(
-          isDebit()
-              ? DateFormat.yMMMd().format(DateTime.now())
-              : '${DateFormat.yMMMd().format(DateTime.now())} at ${DateFormat().add_jm().format(DateTime.now())}',
-          style: AppStyles.regular16.copyWith(
-            color: const Color(0xFFAAAAAA),
+        title: Text(
+          transactionModel.title,
+          style: AppStyles.semiBold16(context),
+        ),
+        subtitle: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(
+            isDebit()
+                ? DateFormat.yMMMd().format(DateTime.now())
+                : '${DateFormat.yMMMd().format(DateTime.now())} at ${DateFormat().add_jm().format(DateTime.now())}',
+            style: AppStyles.regular16(context).copyWith(
+              color: const Color(0xFFAAAAAA),
+            ),
           ),
         ),
-        trailing: Text(
-          '\$${transactionModel.amount}',
-          style: AppStyles.semiBold20.copyWith(
-              color: isDebit()
-                  ? const Color(0xffF3735E)
-                  : const Color(0xff7DD97B)),
+        trailing: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(
+            '\$${transactionModel.amount}',
+            style: AppStyles.semiBold20(context).copyWith(
+                color: isDebit()
+                    ? const Color(0xffF3735E)
+                    : const Color(0xff7DD97B)),
+          ),
         ),
       ),
     );

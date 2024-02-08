@@ -10,9 +10,9 @@ class QuickInvoiceHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
+        Text(
           'Quick Invoice',
-          style: AppStyles.semiBold20,
+          style: AppStyles.semiBold20(context),
         ),
         GestureDetector(
           onTap: () {},

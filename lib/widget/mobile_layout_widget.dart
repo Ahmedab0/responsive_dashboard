@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_admin_dashboard/widget/custom_drawer.dart';
+import '../utils/size_config.dart';
+import '../widget/custom_drawer.dart';
 import '../widget/all_expenses_widget.dart';
 import 'card_and_transaction_section.dart';
 import 'income_section.dart';
@@ -11,24 +12,27 @@ class MobileLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.sizeOf(context).width;
+
     return Scaffold(
-      drawer: screenWidth < 800
+      backgroundColor: const Color(0xFFF7F9FA),
+
+      /* drawer: SizeConfig.width < SizeConfig.tabletBreakPoint
           ? const Drawer(
               child: CustomDrawer(),
             )
           : null,
-      backgroundColor: const Color(0xFFF7F9FA),
-      appBar: screenWidth < 800
+      appBar: SizeConfig.width < SizeConfig.tabletBreakPoint
           ? AppBar(
               foregroundColor: Colors.white,
               backgroundColor:
                   const Color(0xFF4DB7F2), //const Color(0xFF064060),
             )
-          : null,
+          : null, */
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: screenWidth < 800 ? 0 : 40),
+            SizedBox(
+                height: screenWidth < SizeConfig.tabletBreakPoint ? 0 : 40),
             // All Expenses Section
             const AllExpenses(),
             const SizedBox(height: 24),

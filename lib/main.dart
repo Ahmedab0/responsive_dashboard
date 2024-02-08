@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 
@@ -7,7 +5,7 @@ import 'views/my_home_page.dart';
 
 void main() {
   runApp(const MyApp());
-  //runApp(DevicePreview(builder: (context) => const MyApp()));
+  runApp(DevicePreview(builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,8 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //locale: DevicePreview.locale(context),
-      //builder: DevicePreview.appBuilder,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       theme: ThemeData(
         colorScheme: const ColorScheme.light(primary: Colors.blue),
         useMaterial3: true,
@@ -27,6 +25,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+/*
 
 // # 1 ScaleFactor
 // # 2 Responsive FontSize
@@ -58,3 +58,5 @@ double getScaleFactor(BuildContext context) {
     return width / 1000;
   }
 }
+
+*/

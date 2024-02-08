@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_admin_dashboard/utils/app_images.dart';
 import 'package:responsive_admin_dashboard/utils/app_styles.dart';
+import 'package:responsive_admin_dashboard/utils/size_config.dart';
 
 import 'custom_background_container.dart';
 
@@ -10,11 +11,11 @@ class MyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.sizeOf(context).width;
     return AspectRatio(
       aspectRatio: 420 / 215,
       child: Container(
-        padding:
-            const EdgeInsets.only(left: 31, top: 20, right: 24, bottom: 27),
+        padding: const EdgeInsets.only(left: 31, top: 20, right: 24),
         decoration: BoxDecoration(
           color: const Color(0xFF4EB7F2),
           borderRadius: BorderRadius.circular(12),
@@ -35,14 +36,15 @@ class MyCard extends StatelessWidget {
                   children: [
                     Text(
                       'Name card',
-                      style: AppStyles.regular16.copyWith(color: Colors.white),
+                      style: AppStyles.regular16(context)
+                          .copyWith(color: Colors.white),
                     ),
                     const SizedBox(
                       height: 8,
                     ),
-                    const Text(
+                    Text(
                       'Syah Bandi',
-                      style: AppStyles.medium20,
+                      style: AppStyles.medium20(context),
                     ),
                   ],
                 ),
@@ -53,24 +55,32 @@ class MyCard extends StatelessWidget {
               ],
             ),
             //
-            const Expanded(
-              child: SizedBox(),
-            ),
+            const Expanded(child: SizedBox()),
             // card number
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  '0918 8124 0042 8129',
-                  style: AppStyles.semiBold24.copyWith(color: Colors.white),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    '0918 8124 0042 8129',
+                    style: AppStyles.semiBold24(context)
+                        .copyWith(color: Colors.white),
+                  ),
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: width >= 1350 ? 12 : 1),
                 Text(
                   '12/20 - 124',
-                  style: AppStyles.regular16.copyWith(color: Colors.white),
+                  style: AppStyles.regular16(context)
+                      .copyWith(color: Colors.white),
                 ),
               ],
             ),
+            /* const Flexible(
+              child: SizedBox(height: 27),
+            ), */
+            // OR
+            SizedBox(height: width >= 1450 ? 27 : 6)
           ],
         ),
       ),

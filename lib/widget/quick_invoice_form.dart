@@ -68,7 +68,10 @@ class CustomDropDownMenu extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Item mount', style: AppStyles.medium16),
+        Text(
+          'Item mount',
+          style: AppStyles.medium16(context),
+        ),
         const SizedBox(height: 12),
         Container(
           padding: const EdgeInsets.all(20),

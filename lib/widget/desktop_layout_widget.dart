@@ -23,11 +23,10 @@ class DesktopLayout extends StatelessWidget {
         children: [
           // Custom Drawer
           Expanded(
-            //flex: 3,
             child: CustomDrawer(),
           ),
           SizedBox(width: 32),
-
+          //
           Expanded(
             flex: 3,
             child: CustomScrollView(
@@ -55,7 +54,6 @@ class DesktopLayout extends StatelessWidget {
                       SizedBox(width: 24),
                       // Side Bar
                       Expanded(
-                        //flex: 4,
                         child: SideBar(),
                       ),
                     ],

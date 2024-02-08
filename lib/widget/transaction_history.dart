@@ -18,7 +18,7 @@ class TransactionHistory extends StatelessWidget {
         const SizedBox(height: 20),
         Text(
           DateFormat.yMMMd().format(DateTime.now()),
-          style: AppStyles.regular14.copyWith(
+          style: AppStyles.regular14(context).copyWith(
             color: const Color(0xFFAAAAAA),
           ),
         ),
@@ -41,16 +41,16 @@ class TransactionHistoryTitle extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         // Transaction Header
-        const Text(
+        Text(
           'Transaction History',
-          style: AppStyles.semiBold20,
+          style: AppStyles.semiBold20(context),
         ),
         TextButton(
             onPressed: () {},
             child: Text(
               'See all',
-              style:
-                  AppStyles.medium16.copyWith(color: const Color(0xff4EB7F2)),
+              style: AppStyles.medium16(context)
+                  .copyWith(color: const Color(0xff4EB7F2)),
             ))
       ],
     );

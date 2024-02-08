@@ -30,7 +30,7 @@ class _ExpensesListViewState extends State<ExpensesListView> {
         if (index == 1) {
           return Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: buildInkWell(index, item),
             ),
           );
