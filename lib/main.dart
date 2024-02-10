@@ -4,8 +4,11 @@ import 'package:device_preview/device_preview.dart';
 import 'views/my_home_page.dart';
 
 void main() {
-  runApp(const MyApp());
-  runApp(DevicePreview(builder: (context) => const MyApp()));
+  //runApp(const MyApp());
+  runApp(DevicePreview(
+    enabled: false,
+    builder: (context) => const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
       theme: ThemeData(
         colorScheme: const ColorScheme.light(primary: Colors.blue),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
       home: const MyHomePage(),
     );

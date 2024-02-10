@@ -23,24 +23,70 @@ class _ExpensesListViewState extends State<ExpensesListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      children: [
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              if (selectedIndex != 0) {
+                setState(() {
+                  selectedIndex = 0;
+                });
+              }
+            },
+            child: ExpensesCard(
+              expensesItemModel: items[0],
+              isActive: selectedIndex == 0,
+            ),
+          ),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              if (selectedIndex != 1) {
+                setState(() {
+                  selectedIndex = 1;
+                });
+              }
+            },
+            child: ExpensesCard(
+              expensesItemModel: items[1],
+              isActive: selectedIndex == 1,
+            ),
+          ),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              if (selectedIndex != 2) {
+                setState(() {
+                  selectedIndex = 2;
+                });
+              }
+            },
+            child: ExpensesCard(
+              expensesItemModel: items[2],
+              isActive: selectedIndex == 2,
+            ),
+          ),
+        ),
+      ],
+    );
+
+    /* Row(
       children: items.asMap().entries.map((e) {
         int index = e.key;
         var item = e.value;
 
-        if (index == 1) {
-          return Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: buildInkWell(index, item),
-            ),
-          );
-        } else {
-          return Expanded(
+        return Expanded(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0.0),
             child: buildInkWell(index, item),
-          );
-        }
+          ),
+        );
       }).toList(),
-    );
+    ); */
   }
 
 // buildInkWell Method

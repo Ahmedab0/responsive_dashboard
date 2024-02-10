@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../utils/size_config.dart';
-import '../widget/custom_drawer.dart';
 import '../widget/all_expenses_widget.dart';
 import 'card_and_transaction_section.dart';
 import 'income_section.dart';

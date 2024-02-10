@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_admin_dashboard/utils/app_images.dart';
 import 'package:responsive_admin_dashboard/utils/app_styles.dart';
-import 'package:responsive_admin_dashboard/utils/size_config.dart';
-
-import 'custom_background_container.dart';
 
 class MyCard extends StatelessWidget {
   const MyCard({super.key});
