@@ -4,11 +4,12 @@ class TransactionModel {
   final double amount;
   final WithDrawal isWithDrawal;
 
-  const TransactionModel(
-      {required this.title,
-      required this.date,
-      required this.amount,
-      required this.isWithDrawal});
+  const TransactionModel({
+    required this.title,
+    required this.date,
+    required this.amount,
+    required this.isWithDrawal,
+  });
 }
 
 enum WithDrawal {

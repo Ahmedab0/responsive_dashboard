@@ -12,7 +12,6 @@ class DesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0xFFF7F9FA),
-      //drawer: const CustomDrawer(),
       body: Row(
         children: [
           // Custom Drawer
@@ -39,9 +38,7 @@ class DesktopLayout extends StatelessWidget {
                             AllExpenses(),
                             SizedBox(height: 24),
                             QuickInvoice(),
-                            SizedBox(
-                              height: 32,
-                            ),
+                            SizedBox(height: 32),
                           ],
                         ),
                       ),
@@ -56,7 +53,6 @@ class DesktopLayout extends StatelessWidget {
               ],
             ),
           ),
-
           SizedBox(width: 32),
         ],
       ),

@@ -11,9 +11,16 @@ class DrawerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return isActive
-        ? ActiveDrawerItem(drawerItemModel: drawerItemModel)
-        : InActiveDrawerItem(drawerItemModel: drawerItemModel);
+    return AnimatedCrossFade(
+      firstChild: ActiveDrawerItem(drawerItemModel: drawerItemModel),
+      secondChild: InActiveDrawerItem(drawerItemModel: drawerItemModel),
+      crossFadeState:
+          isActive ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+      duration: const Duration(milliseconds: 300),
+    );
+    //isActive
+    // ? ActiveDrawerItem(drawerItemModel: drawerItemModel)
+    // : InActiveDrawerItem(drawerItemModel: drawerItemModel);
   }
 }
 

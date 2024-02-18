@@ -17,14 +17,6 @@ class CustomDrawer extends StatelessWidget {
       color: Colors.white,
       child: CustomScrollView(
         slivers: [
-          /* SliverToBoxAdapter(
-            child: Container(
-              margin: const EdgeInsets.all(20),
-              height: 53,
-              color: const Color(0xFFC4C4C4),
-            ),
-          ), */
-
           // UserInfoListTile
           const SliverToBoxAdapter(
             child: UserInfoListTile(

@@ -1,7 +1,7 @@
 class SizeConfig {
   static double tabletBreakPoint = 800;
 
-  static double desktopBreakPoint = 1200; //1460
+  static double desktopBreakPoint = 1200;
 
 /*   static late double width;
   static late double height;

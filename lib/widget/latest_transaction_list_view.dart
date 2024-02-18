@@ -37,7 +37,9 @@ class LatestTransactionListView extends StatelessWidget {
     );
 
 /*
+
 /// Another Way
+
 SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
