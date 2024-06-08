@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 /*
 
 // # 1 ScaleFactor

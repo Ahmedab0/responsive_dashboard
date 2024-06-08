@@ -11,7 +11,7 @@ class IncomeHeader extends StatefulWidget {
 }
 
 class _IncomeHeaderState extends State<IncomeHeader> {
-  String val = 'Monthly';
+  //String val = 'Monthly';
 
   @override
   Widget build(BuildContext context) {

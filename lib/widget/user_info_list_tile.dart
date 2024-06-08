@@ -16,7 +16,7 @@ class UserInfoListTile extends StatelessWidget {
       color: const Color(0xFFFAFAFA),
       child: Center(
         child: ListTile(
-          contentPadding: const EdgeInsets.all(12.0),
+          //contentPadding: const EdgeInsets.all(12.0),
           leading: Padding(
             padding: const EdgeInsets.only(right: 10.0),
             child: SvgPicture.asset(

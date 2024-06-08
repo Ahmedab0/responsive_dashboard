@@ -32,7 +32,7 @@ class _DrawerItemListViewState extends State<DrawerItemListView> {
                   setState(() {
                     selectedIndex = index;
                   });
-                  log('selectedIndex : $selectedIndex');
+                  //log('selectedIndex : $selectedIndex');
                 }
               },
               child: DrawerItem(

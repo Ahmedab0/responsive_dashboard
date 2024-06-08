@@ -14,7 +14,8 @@ class AdaptiveLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constrains) {
+    return LayoutBuilder(
+        builder: (context, constrains) {
       ///
       log('Layout width ${constrains.maxWidth}');
       log('MediaQuery width ${MediaQuery.sizeOf(context).width}');

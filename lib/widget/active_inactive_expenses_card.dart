@@ -134,7 +134,6 @@ class InActiveExpensesCard extends StatelessWidget {
                       child: Center(
                         child: SvgPicture.asset(
                           expensesItemModel.img,
-                          //colorFilter: const ColorFilter.mode(Color(0xff4EB7F2), BlendMode.srcIn),
                         ),
                       ),
                     ),
